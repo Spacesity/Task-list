@@ -15,7 +15,7 @@ class Tasks():
 		number = 0
 		if command == "V":
 			for index in range(0,len(lst)):
-				print("Task", number + 1, ":", lst[index])
+				print(f"Task {number + 1}: {lst[index]}")
 				number += 1
         
 	def remove_task():
@@ -24,7 +24,7 @@ class Tasks():
 				remove = int(input("Task number (to remove):"))
 				remove = remove - 1
 				lst.pop(remove)
-				print("Task:", remove + 1, "was removed")
+				print(f"Task: {remove + 1} was removed")
 
 	def edit_task():
 		if command == "E":
@@ -40,7 +40,7 @@ def exit_function():
 			json.dump(lst, list_file)
 			sys.exit()
 
-print("Spacesity's Tasks Program")
+print("Spacesity's Task-list program")
 
 while True:
 	command = input("Create (C), Remove (R), Edit (E) or View (V) list? If neither, Quit (Q):").capitalize()
